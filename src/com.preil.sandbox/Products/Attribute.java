@@ -1,4 +1,4 @@
-package com.preil.sandbox;
+package com.preil.sandbox.Products;
 
 import java.util.UUID;
 
@@ -42,10 +42,7 @@ public class Attribute {
 
     @Override
     public String toString() {
-        return "Attribute{" +
-                "uuid='" + uuid + '\'' +
-                ", attributeFullName='" + attributeFullName + '\'' +
-                ", attributeShortName='" + attributeShortName + '\'' +
-                '}';
+        return attributeFullName +
+                ", " + attributeShortName;
     }
 }

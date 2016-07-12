@@ -1,4 +1,4 @@
-package com.preil.sandbox;
+package com.preil.sandbox.Products;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -8,13 +8,14 @@ import java.util.UUID;
 /**
  * Ilya 08.07.2016.
  */
-public class GeneralNomeclature {
+public class Product {
     private String uuid;
     private String name;
     private List<String> alias = new ArrayList<>();
     private List<Attribute> attributes = new LinkedList<>();
+    private List<OrgProduct> orgProducts = new ArrayList<>();
 
-    public GeneralNomeclature(String name) {
+    public Product(String name) {
         this.uuid = UUID.randomUUID().toString();
         this.name = name;
     }
