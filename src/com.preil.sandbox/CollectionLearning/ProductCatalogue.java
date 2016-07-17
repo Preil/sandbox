@@ -1,8 +1,11 @@
 package com.preil.sandbox.CollectionLearning;
 
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
+import java.util.SortedSet;
+import java.util.TreeSet;
+
+import static com.preil.sandbox.CollectionLearning.Product.BY_WEIGHT;
 
 
 /**
@@ -10,9 +13,26 @@ import java.util.Set;
  */
 public class ProductCatalogue implements Iterable<Product> {
 
-    private final Set<Product> products = new HashSet<>();
+    private final SortedSet<Product> products = new TreeSet<>(BY_WEIGHT);
     public void isSuppliedBy (Supplier supplier){
         products.addAll(supplier.products());
+    }
+    public Set<Product> lightVanProducts(){
+        Product lightestHeavyVanProduct = findLightestHeavyVanProduct();
+        return products.headSet(lightestHeavyVanProduct);
+    }
+    public Set<Product> heavyVanProducts(){
+        Product lightestHeavyVanProduct = findLightestHeavyVanProduct();
+        return products.tailSet(lightestHeavyVanProduct);
+    }
+
+    private Product findLightestHeavyVanProduct() {
+        for (Product product:products){
+            if (product.getWeight()>20){
+                return product;
+            }
+        }
+        return products.last();
     }
 
     @Override

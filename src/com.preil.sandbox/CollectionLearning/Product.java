@@ -6,9 +6,12 @@ import java.util.Comparator;
  * Ilya 12.07.2016.
  */
 public class Product {
-    public static final Comparator<Product> BY_WEIGHT
-            = (p1, p2) -> Integer.compare(p1.getWeight(), p2.getWeight());
-
+//    public static final Comparator<Product> BY_WEIGHT
+//            = (p1, p2) -> Integer.compare(p1.getWeight(), p2.getWeight());
+    public static final Comparator<Product> BY_WEIGHT =
+        Comparator.comparing(Product::getWeight);
+    public static final Comparator<Product> BY_NAME =
+        Comparator.comparing(Product::getName);
 
 
     private final String name;
