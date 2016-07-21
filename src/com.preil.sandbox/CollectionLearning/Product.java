@@ -6,7 +6,7 @@ import java.util.Comparator;
  * Ilya 12.07.2016.
  */
 public class Product {
-//    public static final Comparator<Product> BY_WEIGHT
+//    public static final Comparator<GeneralProduct> BY_WEIGHT
 //            = (p1, p2) -> Integer.compare(p1.getWeight(), p2.getWeight());
     public static final Comparator<Product> BY_WEIGHT =
         Comparator.comparing(Product::getWeight);
@@ -33,7 +33,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" +
+        return "GeneralProduct{" +
                 "name='" + name + '\'' +
                 ", weight=" + weight +
                 '}';
