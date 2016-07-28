@@ -14,10 +14,12 @@ public class Product {
         Comparator.comparing(Product::getName);
 
 
+    private final int id;
     private final String name;
     private final int weight;
 
-    public Product(String name, int weight) {
+    public Product(final int id, final String name, final int weight) {
+        this.id = id;
         this.name = name;
         this.weight = weight;
     }
@@ -33,7 +35,7 @@ public class Product {
 
     @Override
     public String toString() {
-        return "GeneralProduct{" +
+        return "Product{" +
                 "name='" + name + '\'' +
                 ", weight=" + weight +
                 '}';
