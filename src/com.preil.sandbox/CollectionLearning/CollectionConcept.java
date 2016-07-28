@@ -10,9 +10,9 @@ import java.util.Iterator;
 public class CollectionConcept {
 
     public static void main(String[] args) {
-        Product door = new Product("Wooden door", 35);
-        Product floorPanel = new Product("Floor panel", 25);
-        Product window = new Product("Window", 20);
+        Product door = new Product(1, "Wooden door", 35);
+        Product floorPanel = new Product(2, "Floor panel", 25);
+        Product window = new Product(3, "Window", 20);
 
         // Defining new collection here
         Collection<Product> products = new ArrayList<>();
